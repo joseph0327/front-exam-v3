@@ -1,38 +1,493 @@
-.App {
-  text-align: center;
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  font-family: Arial, Helvetica, sans-serif; 
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+/* ----------Navbar------------------*/
+.container-nav{
+  top:0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+  margin-left: 50px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 500px){
+  .logo {
+    margin-left: 10px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper{
+    display: flex;
+    position: relative;
+    flex-direction: column ;
+    
+}
+
+.login button{
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    background: none;
+    cursor: pointer;
+    
+}
+
+.login button:hover{
+  background: black;
+  color: white;
+  transition: 0.3s ease-in;
+}
+
+.login{
+    position: absolute;
+    right:100px;
+    top: 20px;
+}
+
+@media screen and (max-width: 500px){
+  .login {
+    right: 40px;
+  
+  }
+}
+
+
+
+/* ---------- InfoSection / Slider------------------*/
+.container-info {
+  position: absolute;
+  margin:0 auto;
+  z-index: 0;
+  position: relative;
+  height: 500px;
+  
+}
+
+.slide_img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slide_img img{
+  width: 100%;
+  height: 100%;
+}
+ 
+
+#i1, #i2, #i3{
+  display: none;
+}
+
+.pre, .next{
+  width: 12%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  background: rgba(88,88, 88, .4);
+  z-index: 99;
+  cursor: pointer; 
+
+}
+
+.pre{
+  left:0;
+}
+
+.next{
+  right: 0;
+}
+
+.nav{
+  width:100%;
+  height: 11px;
+  bottom: 12%;
+  position: absolute;
+  z-index:99;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+}
+
+
+.dots{
+  top: -5px;
+  width: 20px;
+  height: 20px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 50%;
+  display: inline-block;
+  background: rgba(0,0,0,.6);
+}
+
+.slide_img{
+   z-index: -1;
+}
+
+#i1:checked ~ #one,
+#i2:checked ~ #two,
+#i3:checked ~ #three{
+  z-index: 9;
+}
+
+#i1:checked ~ .nav #dot1,
+#i2:checked ~ .nav #dot2,
+#i3:checked ~ .nav #dot3{
+  background: #fff;
+}
+
+
+/* ---------- LOG IN SECTION------------------*/
+
+.container-login{
+  position: absolute;
+  top: -1000%;
+  margin: auto;
+  left:0;
+  right:0;
+  z-index: 0;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px; 
+  background-color: #fff;
+  transition: 0.4s ease-in-out;
+}
+
+.container-login.active{
+  top: 0;
+  left:0;
+  right:0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  width: 100%;
+  position: absolute;
+  background-color: #fff;
+  transition: 0.4s ease-in-out;
+  
+}
+
+.close-login{
+  position: absolute;
+  top: 20px;
+  right:100px;
+  cursor:pointer;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif; 
+  border: none;
+  padding: 10px 20px;
+  background: none;
+  transition: 0.3s ease-in;   
+}
+
+  
+@media screen and (max-width: 600px){
+  .close-login{
+    right: 60px;
+    top : 50px;
+
+  }
+}
+
+.close-login:hover{
+  background: black;
   color: white;
+  transition: 0.3s ease-in;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.login-wrapper{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  border-radius: 10px;
+  padding: 20px;
+}
+.login-wrapper h1{
+  padding-bottom : 20px;
+  border-bottom : 0.5px solid silver;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.login-wrapper form{
+
+  box-sizing: border-box;
+}
+
+form .txt_field{
+  position: relative;
+  margin: 30px 0;
+}
+.login-wrapper label{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.txt_field {
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+  height: 40px;
+}
+
+input[type="submit"]{
+  width: 100%;
+  background-color: black;
+  color: #fff;  
+  bottom: 10px;
+}
+.reg{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif; 
+}
+.reg button{
+  border: none;
+  font-weight: bold ;
+  padding-left: 5px;
+
+}
+
+.login-wrapper a{
+  padding: 5px;  
+}
+
+
+/* ---------- REGISTER SECTION------------------*/
+.container-register{
+  position: absolute;
+  top: -200%;
+  left:0;
+  right: 0;
+  display: flex;
+  z-index: 0;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  display: none;
+  transition: 0.3s ease-in;
+  background-color: #fff;
+}
+
+.container-register.active{
+  top: 0;
+  display:flex;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  transition: 0.3s ease-in;
+  z-index: 9999;
+  position: fixed;
+  background-color: #fff;
+}
+
+.close-register{
+  position: absolute;
+  top: 20px;
+  right: 100px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif; 
+  border: none;
+  padding: 10px 20px;
+  background: none;
+  transition: 0.3s ease-in;  
+}
+
+@media screen and (max-width: 600px){
+  .close-register{
+    right: 60px;
+    top : 50px;
+
   }
 }
+
+
+.close-register:hover, .reg button:hover{
+  background: black;
+  color: white;
+  transition: 0.3s ease-in;
+}
+
+.wrapper-register{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 450px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.wrapper-register h1{
+
+  padding-bottom : 20px;
+  border-bottom : 0.5px solid silver;
+}
+
+.wrapper-register label{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+/* ----------News Sections------------------*/
+.container-news h1{
+  position: relative;
+  left : 10%;
+  top: 40px;
+  bottom: 40px;
+  height: 100px;
+  
+
+}
+.wrapper-news{
+   width: 100%;
+   max-width: 1000px;
+   margin: 20px auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content:space-between;
+}
+@media screen and (max-width: 500px){
+  .wrapper-news {
+    right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
+.card{
+  width: 100%;
+  max-width: 318px;
+  padding: 20px;
+  background: #E1DBDB;
+  color: #fff;
+  margin: 10px 0;
+  border: 1px solid;
+  color: black;
+}
+
+.id{
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  display: flex;
+}
+
+.container-news span{
+  margin:auto;
+  font-size: 17px;
+}
+
+.container-news p{
+  font-size: 17px;
+  margin: 15px;
+}
+
+.container-news button{
+  cursor: pointer;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif; 
+  border: none;
+  padding: 10px 20px;
+  background: none;
+  transition: 0.3s ease-in;  
+}
+
+.container-news button{
+  position: absolute;
+  background: black;
+  color: white;
+  transition: 0.3s ease-in;
+  width: 150px;
+  align-items:center;  
+}
+
+.container-news button:hover{
+  background: #fff;
+  color : black;
+  transition: 0.3s ease-in;
+  border: 1px solid black;
+}
+.wrapper-btn-news{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+/* ----------News Sections------------------*/
+
+.wrapper-footer{
+  position: relative;
+}
+.top-footer{
+  width: 100%;
+  background-color: #562D2D;
+  height: 200px;
+}
+
+.top-footer img{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border-radius: 50px;
+  height: 50px;
+}
+
+.top-footer button{
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  height: 50px;
+  width: 50px;
+
+}
+.bot-footer{
+  height: 50px;
+  background-color: black;
+  text-align: center;
+  padding: 10px 0;
+}
+.top-footer span{
+  color: white;
+  position: absolute;
+  bottom: 100px;
+  left: 50px ;
+  font-size: 10px;
+}
+.bot-footer span{
+  color: white;
+  height: 5px;
+  
+}
+
+
+
+
+
