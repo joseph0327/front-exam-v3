@@ -13,7 +13,7 @@ const LogIn = ({displaylogin, showLogin, showRegister}) => {
                 <div>
                     <h1>LOGIN</h1>
                 </div>
-                <form>
+                <form action='/home'>
                     <div className="txt_field">
                         <label>Email</label> 
                         <input type="email"  />    

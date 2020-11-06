@@ -2,6 +2,8 @@ import React from 'react'
 import Icon1 from '../../images/korea1.jpg'
 import Icon2 from '../../images/korea2.jpg'
 import Icon3 from '../../images/korea3.jpg'
+import Left from '../../images/left.svg'
+import Right from '../../images/right.svg'
 
 const InfoSection = () => {
     return (
@@ -13,18 +15,18 @@ const InfoSection = () => {
 
             <div className="slide_img" id="one" >
                 <img alt="" src={Icon1} />
-                <label htmlFor="i3" className="pre"></label>
-                <label htmlFor="i2" className="next"></label>
+                <label htmlFor="i3" className="pre"><img alt="" src={Left}/></label>
+                <label htmlFor="i2" className="next"><img alt="" src={Right}/></label>
             </div>
             <div className="slide_img" id="two" >
                 <img alt="" src={Icon2} />
-                <label htmlFor="i1" className="pre"></label>
-                <label htmlFor="i3" className="next"></label>
+                <label htmlFor="i1" className="pre"><img alt="" src={Left}/></label>
+                <label htmlFor="i3" className="next"><img alt="" src={Right}/></label>
             </div>
             <div className="slide_img" id="three">
                 <img alt="" src={Icon3} />
-                <label htmlFor="i2" className="pre"></label>
-                <label htmlFor="i1" className="next"></label>
+                <label htmlFor="i2" className="pre"><img alt="" src={Left}/></label>
+                <label htmlFor="i1" className="next"><img alt="" src={Right}/></label>
             </div>
 
             <div className="nav">

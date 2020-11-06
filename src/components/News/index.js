@@ -16,7 +16,7 @@ const News = () => {
 
     return (
         <div className="container-news">
-            <h1>News</h1>
+            <h1>NEWS</h1>
             <div className="wrapper-news">
                {items.slice(0, visible).map(item =>(
                    <div className="card">
